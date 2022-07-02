@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.menu {
+    height: 5vh;
+    background: rgb(30,98,255);
+    background: linear-gradient(90deg, rgba(30,98,255,1) 0%, rgba(174,0,217,1) 50%, rgba(30,98,255,1) 100%);
+    min-height: 10px;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#menu-button {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cloud{
+    position: absolute;
+    transition: .5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#cloud1 {
+    z-index: 3;
+    top: 100;
+    left: 500px;
+    width: 30vw;
 }
 
-.App-link {
-  color: #61dafb;
+#sun {
+    position: fixed;
+    width: 20vw;
+    height: 20vw;
+    left: calc(40vw);
+    transition: 200ms;
+    background-image: url("./sun.png");
+    background-size: cover;
+    border-radius: 100%;
+    text-align: center;
+    margin-top: 10vh;
+    transition: 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#sun:hover ~ #cloud1{
+    transform: translateX(40vw);
+}
+
+#sun:hover ~ #cloud2{
+    transform: translateX(-40vw);
+}
+
+#cloud2 {
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.grad{
+    font: Helvetica;
+    font-size: 5vw;
+    font-weight: 700;
+    position: relative;
+    top: 30%;
+    background: linear-gradient(90deg, rgba(244,0,255,1) 0%, rgba(255,57,57,1) 25%, rgba(255,57,57,1) 75%, rgba(244,0,255,1) 100%);
+    background-clip: text;
+    color: transparent;
+    animation: animatedbg 1.5s infinite linear reverse;
+    background-size: 200%;
+    background-position: -100%;
+    transition: 1s;
+}
+
+@keyframes animatedbg {
+    to {
+        background-position: 100%;
+    }
+}
+
+.background {
+    position: absolute;
+    width:  130%;
+    bottom: 0px;
+}
+
+#one {
+    z-index: 4;
+}
+
+#two {
+    z-index: 3;
+}
+
+#three {
+    z-index: 2;
+}
+
+#four {
+    z-index: 1;
+}
+
+#body {
+    width: 100vw;
+    min-height: 15000px;
+}
+
+#first {
+    top: 1500px;
+}
+
+#contact {
+    position: absolute;
+    top: 100%;
+    transition: 1s;
+    background: grey;
+    width: 100vw;
+    left: -35vw;
+    opacity: 0;
+    height: 20vh;
 }
